@@ -72,6 +72,15 @@ class quizaccess_ipaddresslist extends quiz_access_rule_base {
         }
         return get_string('subnetwrong', 'quizaccess_ipaddresslist');
     }
+    
+    /**
+     * Whether the user should be blocked from reviewing the attempt
+     * @return string false if review access should be allowed or a message
+     *      explaining the reason if access should be prevented.
+     */
+    public function prevent_review_access() {
+        return $this->prevent_access();
+    }
 
     /**
      * Add any fields that this rule requires to the quiz settings form. This
